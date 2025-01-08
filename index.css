@@ -71,6 +71,10 @@ button {
     padding: 2vh 2%;
 }
 
+#bottomnav p:hover {
+    background-color: black;
+}
+
 a {
     color:white;
     text-decoration: none;
