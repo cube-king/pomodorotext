@@ -3,6 +3,8 @@ let play = document.getElementById("play")
 let progress = document.getElementById("progress")
 let playIsPlayable = true;
 let pauseIsPlayable = true;
+let prog = 0;
+let prog2 = 0;
 
 button.addEventListener('click', function() {
     let saveinput = document.getElementById('textarea').textContent
@@ -20,46 +22,60 @@ button.addEventListener('click', function() {
     }
 })
 
+function timerplus() {
+    if (prog > 0) {
+        prog -= 1
+        pauseIsPlayable = false
+        progress.value -= 1
+        setTimeout(timerplus, 1000);
+        document.getElementById("timeleft").textContent=((Math.floor(progress.value / 60))).toString() + ":" + (("0" + (progress.value - 60*(Math.floor(progress.value / 60)))).slice(-2)).toString();
+    }
+    else {
+        pauseIsPlayable = true;
+    }
+}
+
+function breakplus() {
+    if (prog2 > 0) {
+        prog2 -= 1
+        playIsPlayable = false
+        progress.value -= 1
+        setTimeout(breakplus, 1000);
+        document.getElementById("timeleft").textContent=((Math.floor(progress.value / 60))).toString() + ":" + (("0" + (progress.value - 60*(Math.floor(progress.value / 60)))).slice(-2)).toString();
+    }
+    else {
+        playIsPlayable = true
+    }
+}
+
 play.addEventListener('click', function() {
-    progress.max = 1500;
-    progress.value = 1500;
-    let prog = 1500;
     function incrementPlay () {
         if (playIsPlayable) {
-            pauseIsPlayable = false
-            if (prog > 0) {
-                prog -= 1
-                progress.value -= 1
-                setTimeout(incrementPlay, 1000);
-                document.getElementById("timeleft").textContent=((Math.floor(progress.value / 60))).toString() + ":" + (progress.value - 60*(Math.floor(progress.value / 60))).toString();
-            }
-            else {
-                pauseIsPlayable = true;
-            }
+            progress.max = 1500;
+            progress.value = 1500;
+            prog = 1500;
+        }
+        else {
+            console.log("Timer not availible")
         }
     }
     incrementPlay()
+    timerplus()
 })
 
 pause.addEventListener('click', function() {
-    progress.max = 300;
-    progress.value = 300;
-    let prog = 300;
     function incrementPause () {
         if (pauseIsPlayable) {
-            playIsPlayable = false
-            if (prog > 0) {
-                prog -= 1
-                progress.value -= 1
-                setTimeout(incrementPause, 1000);
-                document.getElementById("timeleft").textContent=((Math.floor(progress.value / 60))).toString() + ":" + (progress.value - 60*(Math.floor(progress.value / 60))).toString();
-            }
-            else {
-                playIsPlayable = true
-            }
+            progress.max = 300;
+            progress.value = 300;
+            prog2 = 300;
+        }
+        else {
+            console.log("Break not availible")
         }
     }
     incrementPause()
+    breakplus()
 })
 
 function executeCommand(command, value) {
@@ -87,3 +103,4 @@ document.getElementById('outdent').addEventListener('click', function() {
 document.getElementById('outdent').addEventListener('click', function() {
     executeCommand('outdent');
 })
+
