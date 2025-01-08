@@ -51,6 +51,7 @@ button {
     color: white;
     border: 4px white solid;
     border-radius: 10px;
+    padding:4px 2px;
 }
 
 #bottomnav {
@@ -69,6 +70,17 @@ button {
     display: block;
     text-align: center;
     padding: 2vh 1.5%;
+}
+
+#logo {
+    float: right;
+    display: block;
+    height:5vh;
+    padding: 1.25vh 1.5%;
+}
+
+*:focus {
+    outline: none;
 }
 
 #bottomnav p:hover {
