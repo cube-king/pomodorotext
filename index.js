@@ -37,6 +37,7 @@ function timerplus() {
 
 function breakplus() {
     if (prog2 > 0) {
+        document.getElementById('textarea').setAttribute("contenteditable", false);
         prog2 -= 1
         playIsPlayable = false
         progress.value -= 1
@@ -45,6 +46,7 @@ function breakplus() {
     }
     else {
         playIsPlayable = true
+        document.getElementById('textarea').setAttribute("contenteditable", true);
     }
 }
 
