@@ -41,7 +41,7 @@ button {
     max-width:50vw;
     padding-top:10px;
     margin-top:10vh;
-    box-shadow: 0 0 30px 10px #707070;
+    box-shadow: 0 0 30px 10px #ffffff;
 }
 
 #buttoncont {
@@ -72,6 +72,17 @@ button {
     height:7.5vh;
     left: 0vw;
     text-align: left;
+    animation-name: slideup;
+    animation-duration: 1.2s;
+}
+
+@keyframes slideup {
+    0% {
+        transform: translateZ(0)
+    }
+    100% {
+        transform: translateZ(-100px)
+    }
 }
 
 #bottomnav p {

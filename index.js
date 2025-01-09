@@ -24,6 +24,7 @@ button.addEventListener('click', function() {
 
 function timerplus() {
     if (prog > 0) {
+        document.getElementById("inteditor").style["boxShadow"] = "0 0 30px 10px #ffffff"
         prog -= 1
         pauseIsPlayable = false
         progress.value -= 1
@@ -37,6 +38,7 @@ function timerplus() {
 
 function breakplus() {
     if (prog2 > 0) {
+        document.getElementById("inteditor").style["boxShadow"] = "0 0 30px 10px #707070"
         document.getElementById('textarea').setAttribute("contenteditable", false);
         prog2 -= 1
         playIsPlayable = false
@@ -47,6 +49,7 @@ function breakplus() {
     else {
         playIsPlayable = true
         document.getElementById('textarea').setAttribute("contenteditable", true);
+        document.getElementById("inteditor").style["boxShadow"] = "0 0 30px 10px #ffffff"
     }
 }
 
