@@ -7,6 +7,15 @@ p,h1,h2,h3 {
     text-align: center;
 }
 
+#leftalign {
+    text-align:left;
+    font-size:1.25vw;
+}
+
+#awesomebody {
+    padding:2vh 2vw;
+}
+
 body {
     margin:0;
     padding:0;
