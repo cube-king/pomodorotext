@@ -108,4 +108,3 @@ document.getElementById('outdent').addEventListener('click', function() {
 document.getElementById('outdent').addEventListener('click', function() {
     executeCommand('outdent');
 })
-
