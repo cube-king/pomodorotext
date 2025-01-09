@@ -44,7 +44,7 @@ button {
 #textarea {
     width:100%; 
     min-height:20vh; 
-    margin-top:1%; 
+    margin-top:1.25%; 
     resize:vertical;
     font-family: Roboto Mono;
     background-color: black;
@@ -55,7 +55,7 @@ button {
 }
 
 #bottomnav {
-    background-color: #161616;
+    background-color: #171717;
     overflow: hidden;
     position: fixed;
     bottom: 0;
@@ -97,4 +97,5 @@ a {
     left:50vw;
     text-align: center;
     text-decoration: none;
+    color:white;
 }
